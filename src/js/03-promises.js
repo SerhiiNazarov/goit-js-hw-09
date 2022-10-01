@@ -7,7 +7,8 @@ formRef.addEventListener('input', event => {
   inputsRef[event.target.name] = event.target.value;
 });
 
-function createPromise(position, delay) {
+const createPromise = (position, delay) => {
+  console.log(position, delay);
   return new Promise((resolve, reject) => {
     setTimeout(() => {
       const shouldResolve = Math.random() > 0.3;
@@ -18,7 +19,7 @@ function createPromise(position, delay) {
       }
     }, delay);
   });
-}
+};
 
 formRef.addEventListener('submit', event => {
   event.preventDefault();
@@ -26,14 +27,13 @@ formRef.addEventListener('submit', event => {
   for (let i = 0; i < inputsRef.amount; i++) {
     const delay = Number(inputsRef.delay) + Number(inputsRef.step) * i;
     const position = i + 1;
-    promises.push(createPromise(position, delay));
-  }
 
-  Promise.all(promises)
-    .then(({ position, delay }) => {
-      console.log(`✅ Fulfilled promise ${position} in ${delay}ms`);
-    })
-    .catch(({ position, delay }) => {
-      console.log(`❌ Rejected promise ${position} in ${delay}ms`);
-    });
+    createPromise(position, delay)
+      .then(({ position, delay }) => {
+        console.log(`✅ Fulfilled promise ${position} in ${delay}ms`);
+      })
+      .catch(({ position, delay }) => {
+        console.log(`❌ Rejected promise ${position} in ${delay}ms`);
+      });
+  }
 });
