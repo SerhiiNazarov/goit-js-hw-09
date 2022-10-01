@@ -1,5 +1,5 @@
 const formRef = document.querySelector('.form');
-inputsRef = {};
+const inputsRef = {};
 const promises = [];
 
 formRef.addEventListener('input', event => {
