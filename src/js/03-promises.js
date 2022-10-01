@@ -8,7 +8,6 @@ formRef.addEventListener('input', event => {
 });
 
 const createPromise = (position, delay) => {
-  console.log(position, delay);
   return new Promise((resolve, reject) => {
     setTimeout(() => {
       const shouldResolve = Math.random() > 0.3;

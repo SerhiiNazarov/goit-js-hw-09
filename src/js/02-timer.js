@@ -26,9 +26,10 @@ const options = {
     btnRef.addEventListener('click', () => {
       intervalID = setInterval(() => {
         let delta = selectedDates[0].getTime() - Date.now();
-        if (delta <= 999) {
+        if (delta <= 0) {
           clearInterval(intervalID);
           btnRef.disabled = true;
+          return;
         }
         const data = convertMs(delta);
         refs.days.textContent = addLeadingZero(data.days);
