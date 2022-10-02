@@ -1,6 +1,6 @@
-import Notiflix from 'notiflix';
 import flatpickr from 'flatpickr';
 import 'flatpickr/dist/flatpickr.min.css';
+import Notiflix from 'notiflix';
 
 let intervalID = null;
 const btnRef = document.querySelector('button[data-start]');
