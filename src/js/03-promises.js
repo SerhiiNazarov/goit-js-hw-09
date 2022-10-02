@@ -1,7 +1,6 @@
 import Notiflix from 'notiflix';
 const formRef = document.querySelector('.form');
 const inputsRef = {};
-const promises = [];
 
 formRef.addEventListener('input', event => {
   event.target.name;
