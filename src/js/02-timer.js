@@ -1,3 +1,4 @@
+import Notiflix from 'notiflix';
 import flatpickr from 'flatpickr';
 import 'flatpickr/dist/flatpickr.min.css';
 
@@ -19,7 +20,9 @@ const options = {
   onClose(selectedDates) {
     const timerTime = selectedDates[0].getTime() - Date.now();
     if (timerTime <= 0) {
-      window.alert('Please choose a date in the future');
+      Notiflix.Notify.failure('Please choose a date in the future', {
+        position: 'center-center',
+      });
       return;
     }
     btnRef.disabled = false;
