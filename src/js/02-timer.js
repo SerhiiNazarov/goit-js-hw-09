@@ -22,9 +22,16 @@ const options = {
     if (timerTime <= 0) {
       Notiflix.Notify.failure('Please choose a date in the future', {
         position: 'center-center',
+        borderRadius: '10px',
+        clickToClose: true,
       });
       return;
     }
+    Notiflix.Notify.success('This date is valid !', {
+      position: 'center-center',
+      borderRadius: '10px',
+      clickToClose: true,
+    });
     btnRef.disabled = false;
     btnRef.addEventListener('click', () => {
       intervalID = setInterval(() => {

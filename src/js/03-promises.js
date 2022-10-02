@@ -33,7 +33,8 @@ formRef.addEventListener('submit', event => {
         Notiflix.Notify.success(
           `✅ Fulfilled promise ${position} in ${delay}ms`,
           {
-            position: 'right-bottom',
+            position: 'center-center',
+            cssAnimationStyle: 'from-top',
           }
         );
         console.log(`✅ Fulfilled promise ${position} in ${delay}ms`);
@@ -42,7 +43,8 @@ formRef.addEventListener('submit', event => {
         Notiflix.Notify.failure(
           `❌ Rejected promise ${position} in ${delay}ms`,
           {
-            position: 'right-bottom',
+            position: 'center-center',
+            cssAnimationStyle: 'from-top',
           }
         );
         console.log(`❌ Rejected promise ${position} in ${delay}ms`);
